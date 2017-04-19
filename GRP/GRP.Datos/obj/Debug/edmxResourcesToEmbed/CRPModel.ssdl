@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_CRPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T_0">
+    <Key>
+      <PropertyRef Name="codCarta" />
+      <PropertyRef Name="codCombo" />
+    </Key>
+    <Property Name="codCarta" Type="int" Nullable="false" />
+    <Property Name="codCombo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_1">
+    <Key>
+      <PropertyRef Name="codCombo" />
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="codCombo" Type="int" Nullable="false" />
+    <Property Name="codProducto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Articulo">
+    <Key>
+      <PropertyRef Name="codArticulo" />
+    </Key>
+    <Property Name="codArticulo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="unidadMedida" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="tipoArticulo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="costoxUM" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_ArticuloProducto">
+    <Key>
+      <PropertyRef Name="codProducto" />
+      <PropertyRef Name="codArticulo" />
+    </Key>
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="costo" Type="smallint" Nullable="false" />
+    <Property Name="codProducto" Type="int" Nullable="false" />
+    <Property Name="codArticulo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Carta">
+    <Key>
+      <PropertyRef Name="codCarta" />
+    </Key>
+    <Property Name="codCarta" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="fechaBaja" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Combo">
+    <Key>
+      <PropertyRef Name="codCombo" />
+    </Key>
+    <Property Name="codCombo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="precio" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_ComboVenta">
+    <Key>
+      <PropertyRef Name="codVenta" />
+      <PropertyRef Name="codCombo" />
+    </Key>
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="monto" Type="smallint" Nullable="false" />
+    <Property Name="codVenta" Type="int" Nullable="false" />
+    <Property Name="codCombo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_InformacionNutricional">
+    <Key>
+      <PropertyRef Name="codigoInfNut" />
+      <PropertyRef Name="codArticulo" />
+    </Key>
+    <Property Name="codigoInfNut" Type="int" Nullable="false" />
+    <Property Name="calorias" Type="smallint" Nullable="false" />
+    <Property Name="proteinas" Type="smallint" Nullable="false" />
+    <Property Name="carbohidratos" Type="smallint" Nullable="false" />
+    <Property Name="grasas" Type="smallint" Nullable="false" />
+    <Property Name="codArticulo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Producto">
+    <Key>
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="codProducto" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="elaboracion" Type="smallint" Nullable="false" />
+    <Property Name="costo" Type="smallint" Nullable="false" />
+    <Property Name="umbralCosto" Type="smallint" Nullable="false" />
+    <Property Name="precio" Type="smallint" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="calorias" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="proteinas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="carbohidratos" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="grasas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Venta">
+    <Key>
+      <PropertyRef Name="codVenta" />
+    </Key>
+    <Property Name="codVenta" Type="int" Nullable="false" />
+    <Property Name="montoTotal" Type="smallint" Nullable="false" />
+    <Property Name="fecha" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_T_02">
+    <End Role="T_Carta" Type="Self.T_Carta" Multiplicity="1" />
+    <End Role="T_0" Type="Self.T_0" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Carta">
+        <PropertyRef Name="codCarta" />
+      </Principal>
+      <Dependent Role="T_0">
+        <PropertyRef Name="codCarta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_03">
+    <End Role="T_Combo" Type="Self.T_Combo" Multiplicity="1" />
+    <End Role="T_0" Type="Self.T_0" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Combo">
+        <PropertyRef Name="codCombo" />
+      </Principal>
+      <Dependent Role="T_0">
+        <PropertyRef Name="codCombo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_14">
+    <End Role="T_Combo" Type="Self.T_Combo" Multiplicity="1" />
+    <End Role="T_1" Type="Self.T_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Combo">
+        <PropertyRef Name="codCombo" />
+      </Principal>
+      <Dependent Role="T_1">
+        <PropertyRef Name="codCombo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_15">
+    <End Role="T_Producto" Type="Self.T_Producto" Multiplicity="1" />
+    <End Role="T_1" Type="Self.T_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="T_1">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ArticuloProducto0">
+    <End Role="T_Producto" Type="Self.T_Producto" Multiplicity="1" />
+    <End Role="T_ArticuloProducto" Type="Self.T_ArticuloProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="T_ArticuloProducto">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ArticuloProducto1">
+    <End Role="T_Articulo" Type="Self.T_Articulo" Multiplicity="1" />
+    <End Role="T_ArticuloProducto" Type="Self.T_ArticuloProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Articulo">
+        <PropertyRef Name="codArticulo" />
+      </Principal>
+      <Dependent Role="T_ArticuloProducto">
+        <PropertyRef Name="codArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ComboVenta6">
+    <End Role="T_Venta" Type="Self.T_Venta" Multiplicity="1" />
+    <End Role="T_ComboVenta" Type="Self.T_ComboVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Venta">
+        <PropertyRef Name="codVenta" />
+      </Principal>
+      <Dependent Role="T_ComboVenta">
+        <PropertyRef Name="codVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ComboVenta7">
+    <End Role="T_Combo" Type="Self.T_Combo" Multiplicity="1" />
+    <End Role="T_ComboVenta" Type="Self.T_ComboVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Combo">
+        <PropertyRef Name="codCombo" />
+      </Principal>
+      <Dependent Role="T_ComboVenta">
+        <PropertyRef Name="codCombo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_InformacionNutricional8">
+    <End Role="T_Articulo" Type="Self.T_Articulo" Multiplicity="1" />
+    <End Role="T_InformacionNutricional" Type="Self.T_InformacionNutricional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Articulo">
+        <PropertyRef Name="codArticulo" />
+      </Principal>
+      <Dependent Role="T_InformacionNutricional">
+        <PropertyRef Name="codArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BD_CRPModelStoreContainer">
+    <EntitySet Name="T_0" EntityType="Self.T_0" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_1" EntityType="Self.T_1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Articulo" EntityType="Self.T_Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ArticuloProducto" EntityType="Self.T_ArticuloProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Carta" EntityType="Self.T_Carta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Combo" EntityType="Self.T_Combo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ComboVenta" EntityType="Self.T_ComboVenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_InformacionNutricional" EntityType="Self.T_InformacionNutricional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Producto" EntityType="Self.T_Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Venta" EntityType="Self.T_Venta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_T_02" Association="Self.FK_T_02">
+      <End Role="T_Carta" EntitySet="T_Carta" />
+      <End Role="T_0" EntitySet="T_0" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_03" Association="Self.FK_T_03">
+      <End Role="T_Combo" EntitySet="T_Combo" />
+      <End Role="T_0" EntitySet="T_0" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_14" Association="Self.FK_T_14">
+      <End Role="T_Combo" EntitySet="T_Combo" />
+      <End Role="T_1" EntitySet="T_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_15" Association="Self.FK_T_15">
+      <End Role="T_Producto" EntitySet="T_Producto" />
+      <End Role="T_1" EntitySet="T_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ArticuloProducto0" Association="Self.FK_T_ArticuloProducto0">
+      <End Role="T_Producto" EntitySet="T_Producto" />
+      <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ArticuloProducto1" Association="Self.FK_T_ArticuloProducto1">
+      <End Role="T_Articulo" EntitySet="T_Articulo" />
+      <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ComboVenta6" Association="Self.FK_T_ComboVenta6">
+      <End Role="T_Venta" EntitySet="T_Venta" />
+      <End Role="T_ComboVenta" EntitySet="T_ComboVenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ComboVenta7" Association="Self.FK_T_ComboVenta7">
+      <End Role="T_Combo" EntitySet="T_Combo" />
+      <End Role="T_ComboVenta" EntitySet="T_ComboVenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_InformacionNutricional8" Association="Self.FK_T_InformacionNutricional8">
+      <End Role="T_Articulo" EntitySet="T_Articulo" />
+      <End Role="T_InformacionNutricional" EntitySet="T_InformacionNutricional" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -102,8 +103,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GRP.Entidades\GRP.Entidades.csproj">
+      <Project>{0c077884-2540-4143-a8fc-eda58881541d}</Project>
+      <Name>GRP.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GRP.Negocio\GRP.Negocio.csproj">
+      <Project>{48a74453-365a-4c3a-a139-c7f9fc339c81}</Project>
+      <Name>GRP.Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

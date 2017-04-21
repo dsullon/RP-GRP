@@ -26,7 +26,7 @@ namespace GRP.Entidades
         public string descripcion { get; set; }
         public string unidadMedida { get; set; }
         public string tipoArticulo { get; set; }
-        public short costoxUM { get; set; }
+        public decimal costoxUM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_ArticuloProducto> T_ArticuloProducto { get; set; }

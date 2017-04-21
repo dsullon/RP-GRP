@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BD_CRPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="T_Articulo">
-    <Key>
-      <PropertyRef Name="codArticulo" />
-    </Key>
-    <Property Name="codArticulo" Type="Int32" Nullable="false" />
-    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="unidadMedida" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="tipoArticulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="costoxUM" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="T_ArticuloProducto" Relationship="Self.FK_T_ArticuloProducto1" FromRole="T_Articulo" ToRole="T_ArticuloProducto" />
-    <NavigationProperty Name="T_InformacionNutricional" Relationship="Self.FK_T_InformacionNutricional8" FromRole="T_Articulo" ToRole="T_InformacionNutricional" />
-  </EntityType>
   <EntityType Name="T_ArticuloProducto">
     <Key>
       <PropertyRef Name="codProducto" />
@@ -22,8 +9,8 @@
     <Property Name="costo" Type="Int16" Nullable="false" />
     <Property Name="codProducto" Type="Int32" Nullable="false" />
     <Property Name="codArticulo" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="T_Articulo" Relationship="Self.FK_T_ArticuloProducto1" FromRole="T_ArticuloProducto" ToRole="T_Articulo" />
     <NavigationProperty Name="T_Producto" Relationship="Self.FK_T_ArticuloProducto0" FromRole="T_ArticuloProducto" ToRole="T_Producto" />
+    <NavigationProperty Name="T_Articulo" Relationship="BD_CRPModel.FK_T_ArticuloProducto1" FromRole="T_ArticuloProducto" ToRole="T_Articulo" />
   </EntityType>
   <EntityType Name="T_Carta">
     <Key>
@@ -68,7 +55,7 @@
     <Property Name="carbohidratos" Type="Int16" Nullable="false" />
     <Property Name="grasas" Type="Int16" Nullable="false" />
     <Property Name="codArticulo" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="T_Articulo" Relationship="Self.FK_T_InformacionNutricional8" FromRole="T_InformacionNutricional" ToRole="T_Articulo" />
+    <NavigationProperty Name="T_Articulo" Relationship="BD_CRPModel.FK_T_InformacionNutricional8" FromRole="T_InformacionNutricional" ToRole="T_Articulo" />
   </EntityType>
   <EntityType Name="T_Producto">
     <Key>
@@ -97,30 +84,6 @@
     <Property Name="fecha" Type="Int16" Nullable="false" />
     <NavigationProperty Name="T_ComboVenta" Relationship="Self.FK_T_ComboVenta6" FromRole="T_Venta" ToRole="T_ComboVenta" />
   </EntityType>
-  <Association Name="FK_T_ArticuloProducto1">
-    <End Role="T_Articulo" Type="Self.T_Articulo" Multiplicity="1" />
-    <End Role="T_ArticuloProducto" Type="Self.T_ArticuloProducto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="T_Articulo">
-        <PropertyRef Name="codArticulo" />
-      </Principal>
-      <Dependent Role="T_ArticuloProducto">
-        <PropertyRef Name="codArticulo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_T_InformacionNutricional8">
-    <End Role="T_Articulo" Type="Self.T_Articulo" Multiplicity="1" />
-    <End Role="T_InformacionNutricional" Type="Self.T_InformacionNutricional" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="T_Articulo">
-        <PropertyRef Name="codArticulo" />
-      </Principal>
-      <Dependent Role="T_InformacionNutricional">
-        <PropertyRef Name="codArticulo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_T_ArticuloProducto0">
     <End Role="T_Producto" Type="Self.T_Producto" Multiplicity="1" />
     <End Role="T_ArticuloProducto" Type="Self.T_ArticuloProducto" Multiplicity="*" />
@@ -166,7 +129,6 @@
     <End Role="T_Producto" Type="Self.T_Producto" Multiplicity="*" />
   </Association>
   <EntityContainer Name="BD_CRPEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="T_Articulo" EntityType="Self.T_Articulo" />
     <EntitySet Name="T_ArticuloProducto" EntityType="Self.T_ArticuloProducto" />
     <EntitySet Name="T_Carta" EntityType="Self.T_Carta" />
     <EntitySet Name="T_Combo" EntityType="Self.T_Combo" />
@@ -174,14 +136,6 @@
     <EntitySet Name="T_InformacionNutricional" EntityType="Self.T_InformacionNutricional" />
     <EntitySet Name="T_Producto" EntityType="Self.T_Producto" />
     <EntitySet Name="T_Venta" EntityType="Self.T_Venta" />
-    <AssociationSet Name="FK_T_ArticuloProducto1" Association="Self.FK_T_ArticuloProducto1">
-      <End Role="T_Articulo" EntitySet="T_Articulo" />
-      <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_T_InformacionNutricional8" Association="Self.FK_T_InformacionNutricional8">
-      <End Role="T_Articulo" EntitySet="T_Articulo" />
-      <End Role="T_InformacionNutricional" EntitySet="T_InformacionNutricional" />
-    </AssociationSet>
     <AssociationSet Name="FK_T_ArticuloProducto0" Association="Self.FK_T_ArticuloProducto0">
       <End Role="T_Producto" EntitySet="T_Producto" />
       <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
@@ -202,5 +156,51 @@
       <End Role="T_Combo" EntitySet="T_Combo" />
       <End Role="T_Producto" EntitySet="T_Producto" />
     </AssociationSet>
+    <EntitySet Name="T_Articulo" EntityType="BD_CRPModel.T_Articulo" />
+    <AssociationSet Name="FK_T_ArticuloProducto1" Association="BD_CRPModel.FK_T_ArticuloProducto1">
+      <End Role="T_Articulo" EntitySet="T_Articulo" />
+      <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_InformacionNutricional8" Association="BD_CRPModel.FK_T_InformacionNutricional8">
+      <End Role="T_Articulo" EntitySet="T_Articulo" />
+      <End Role="T_InformacionNutricional" EntitySet="T_InformacionNutricional" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="T_Articulo">
+    <Key>
+      <PropertyRef Name="codArticulo" />
+    </Key>
+    <Property Name="codArticulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="unidadMedida" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tipoArticulo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="costoxUM" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <NavigationProperty Name="T_ArticuloProducto" Relationship="BD_CRPModel.FK_T_ArticuloProducto1" FromRole="T_Articulo" ToRole="T_ArticuloProducto" />
+    <NavigationProperty Name="T_InformacionNutricional" Relationship="BD_CRPModel.FK_T_InformacionNutricional8" FromRole="T_Articulo" ToRole="T_InformacionNutricional" />
+  </EntityType>
+  <Association Name="FK_T_ArticuloProducto1">
+    <End Type="BD_CRPModel.T_Articulo" Role="T_Articulo" Multiplicity="1" />
+    <End Type="BD_CRPModel.T_ArticuloProducto" Role="T_ArticuloProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Articulo">
+        <PropertyRef Name="codArticulo" />
+      </Principal>
+      <Dependent Role="T_ArticuloProducto">
+        <PropertyRef Name="codArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_InformacionNutricional8">
+    <End Type="BD_CRPModel.T_Articulo" Role="T_Articulo" Multiplicity="1" />
+    <End Type="BD_CRPModel.T_InformacionNutricional" Role="T_InformacionNutricional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Articulo">
+        <PropertyRef Name="codArticulo" />
+      </Principal>
+      <Dependent Role="T_InformacionNutricional">
+        <PropertyRef Name="codArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

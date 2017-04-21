@@ -1,5 +1,53 @@
+ALTER TABLE T_ComboVenta DROP CONSTRAINT FK_T_ComboVenta7
+GO
+ALTER TABLE T_ComboVenta DROP CONSTRAINT FK_T_ComboVenta6
+GO
+ALTER TABLE T_1 DROP CONSTRAINT FK_T_14
+GO
+ALTER TABLE T_1 DROP CONSTRAINT FK_T_15
+GO
+ALTER TABLE T_InformacionNutricional DROP CONSTRAINT FK_T_InformacionNutricional8
+GO
+ALTER TABLE T_ArticuloProducto DROP CONSTRAINT FK_T_ArticuloProducto0
+GO
+ALTER TABLE T_ArticuloProducto DROP CONSTRAINT FK_T_ArticuloProducto1
+GO
+ALTER TABLE T_0 DROP CONSTRAINT FK_T_02
+GO
+ALTER TABLE T_0 DROP CONSTRAINT FK_T_03
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_Articulo' AND type = 'U')
+	DROP TABLE T_Articulo
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_ComboVenta' AND type = 'U')
+	DROP TABLE T_ComboVenta
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_1' AND type = 'U')
+	DROP TABLE T_1
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_InformacionNutricional' AND type = 'U')
+	DROP TABLE T_InformacionNutricional
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_Combo' AND type = 'U')
+	DROP TABLE T_Combo
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_ArticuloProducto' AND type = 'U')
+	DROP TABLE T_ArticuloProducto
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_Carta' AND type = 'U')
+	DROP TABLE T_Carta
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_Venta' AND type = 'U')
+	DROP TABLE T_Venta
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_Producto' AND type = 'U')
+	DROP TABLE T_Producto
+GO
+IF EXISTS (SELECT name FROM sysobjects WHERE name = 'T_0' AND type = 'U')
+	DROP TABLE T_0
+GO
 CREATE TABLE T_Carta (
-	codCarta INT NOT NULL,
+	codCarta INT IDENTITY NOT NULL,
 	estado BIT NOT NULL,
 	fechaBaja SMALLINT NOT NULL,
 	CONSTRAINT PK_T_Carta2 PRIMARY KEY NONCLUSTERED (codCarta)
@@ -42,12 +90,12 @@ CREATE TABLE T_Articulo (
 	descripcion VARCHAR ( 255 ) NOT NULL,
 	unidadMedida VARCHAR ( 255 ) NOT NULL,
 	tipoArticulo VARCHAR ( 255 ) NOT NULL,
-	costoxUM NUMERIC ( 38 ) NOT NULL,
+	costoxUM NUMERIC ( 13, 2 ) NOT NULL,
 	CONSTRAINT PK_T_Articulo5 PRIMARY KEY NONCLUSTERED (codArticulo)
 	)
 GO
 CREATE TABLE T_InformacionNutricional (
-	codigoInfNut INT NOT NULL,
+	codigoInfNut INT IDENTITY NOT NULL,
 	calorias SMALLINT NOT NULL,
 	proteinas SMALLINT NOT NULL,
 	carbohidratos SMALLINT NOT NULL,
@@ -87,7 +135,7 @@ CREATE TABLE T_Venta (
 	)
 GO
 CREATE TABLE T_Producto (
-	codProducto INT NOT NULL,
+	codProducto INT IDENTITY NOT NULL,
 	nombre VARCHAR ( 255 ) NOT NULL,
 	elaboracion SMALLINT NOT NULL,
 	costo SMALLINT NOT NULL,

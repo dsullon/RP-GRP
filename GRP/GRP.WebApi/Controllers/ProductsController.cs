@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using GRP.Entidades;
+﻿using GRP.Entidades;
 using GRP.Negocio;
+using System.Collections.Generic;
+using System.Web.Http;
 
 namespace GRP.WebApi.Controllers
 {
@@ -21,7 +17,6 @@ namespace GRP.WebApi.Controllers
             if (product == null)
                 return NotFound();
             return Ok(product);
-        }
-        
+        }        
     }
 }

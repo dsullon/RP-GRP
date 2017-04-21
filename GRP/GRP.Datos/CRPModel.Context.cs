@@ -26,7 +26,6 @@ namespace GRP.Datos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<T_Articulo> T_Articulo { get; set; }
         public virtual DbSet<T_ArticuloProducto> T_ArticuloProducto { get; set; }
         public virtual DbSet<T_Carta> T_Carta { get; set; }
         public virtual DbSet<T_Combo> T_Combo { get; set; }
@@ -34,5 +33,6 @@ namespace GRP.Datos
         public virtual DbSet<T_InformacionNutricional> T_InformacionNutricional { get; set; }
         public virtual DbSet<T_Producto> T_Producto { get; set; }
         public virtual DbSet<T_Venta> T_Venta { get; set; }
+        public virtual DbSet<T_Articulo> T_Articulo { get; set; }
     }
 }

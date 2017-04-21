@@ -20,12 +20,12 @@
     <Key>
       <PropertyRef Name="codArticulo" />
     </Key>
-    <Property Name="codArticulo" Type="int" Nullable="false" />
+    <Property Name="codArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="unidadMedida" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="tipoArticulo" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="costoxUM" Type="smallint" Nullable="false" />
+    <Property Name="costoxUM" Type="numeric" Precision="13" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="T_ArticuloProducto">
     <Key>
@@ -41,7 +41,7 @@
     <Key>
       <PropertyRef Name="codCarta" />
     </Key>
-    <Property Name="codCarta" Type="int" Nullable="false" />
+    <Property Name="codCarta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="estado" Type="bit" Nullable="false" />
     <Property Name="fechaBaja" Type="smallint" Nullable="false" />
   </EntityType>
@@ -68,7 +68,7 @@
       <PropertyRef Name="codigoInfNut" />
       <PropertyRef Name="codArticulo" />
     </Key>
-    <Property Name="codigoInfNut" Type="int" Nullable="false" />
+    <Property Name="codigoInfNut" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="calorias" Type="smallint" Nullable="false" />
     <Property Name="proteinas" Type="smallint" Nullable="false" />
     <Property Name="carbohidratos" Type="smallint" Nullable="false" />
@@ -79,7 +79,7 @@
     <Key>
       <PropertyRef Name="codProducto" />
     </Key>
-    <Property Name="codProducto" Type="int" Nullable="false" />
+    <Property Name="codProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="elaboracion" Type="smallint" Nullable="false" />
     <Property Name="costo" Type="smallint" Nullable="false" />

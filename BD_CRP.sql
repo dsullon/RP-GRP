@@ -137,15 +137,18 @@ GO
 CREATE TABLE T_Producto (
 	codProducto INT IDENTITY NOT NULL,
 	nombre VARCHAR ( 255 ) NOT NULL,
-	elaboracion SMALLINT NOT NULL,
-	costo SMALLINT NOT NULL,
-	umbralCosto SMALLINT NOT NULL,
-	precio SMALLINT NOT NULL,
+	elaboracion TEXT NOT NULL,
+	costo NUMERIC ( 13, 2 ) NOT NULL,
+	umbralCosto NUMERIC ( 13, 2 ) NOT NULL,
+	precio NUMERIC ( 13, 2 ) NOT NULL,
 	estado BIT NOT NULL,
 	calorias NUMERIC ( 13, 2 ) NOT NULL,
 	proteinas NUMERIC ( 13, 2 ) NOT NULL,
 	carbohidratos NUMERIC ( 13, 2 ) NOT NULL,
 	grasas NUMERIC ( 13, 2 ) NOT NULL,
+	tipo VARCHAR ( 50 ) DEFAULT Principal NOT NULL,
+	porciones INT DEFAULT 1 NOT NULL,
+	rendimiento NUMERIC ( 13, 2 ) DEFAULT 100 NOT NULL,
 	CONSTRAINT PK_T_Producto1 PRIMARY KEY NONCLUSTERED (codProducto)
 	)
 GO

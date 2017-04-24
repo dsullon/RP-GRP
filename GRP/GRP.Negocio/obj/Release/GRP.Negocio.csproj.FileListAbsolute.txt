@@ -1,0 +1,10 @@
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Negocio.dll.config
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Negocio.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.SqlServer.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Datos.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Entidades.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.SqlServer.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\obj\Release\GRP.Negocio.csprojResolveAssemblyReference.cache
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\obj\Release\GRP.Negocio.dll

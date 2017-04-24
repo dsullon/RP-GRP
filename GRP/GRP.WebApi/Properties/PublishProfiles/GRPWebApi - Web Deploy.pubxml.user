@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAABHzqiR1FkiSFq0fS6MgIwAAAAACAAAAAAAQZgAAAAEAACAAAABInMl06BhKKidgxpQahQtDFMsIfCy5/U8WGkgc9FxbqwAAAAAOgAAAAAIAACAAAADqcQQ/yarhEBZf/EUAsQmFUvfX4HETCYuDgCkzhq9Dv4AAAAChShOOGKjeNhGKw5Ae7fkOxPVEckwQLZoKKReoZOa05phTyLuf1AVTIeGOc9le2IO7lBpjxJwdyjkkDxatlEnsAMMrQzS8sDtObCjlzIQIEgZeXgIjIrr/GOhg0hryW6/9us4Cuh5PYK/Stx9owDYpKejbjlRiDKiVMXA0mO+z8EAAAADhLtg0+0vLxIO3uEwVsi1y6oXR8GZ9lpM54I+fZnfiUV7Om5RIPesm5NDl52QLwzOth71OAzLJzOm7MOfvqFJK</EncryptedPassword>
+    <_PublishTargetUrl>D:\ALEX\CURSOS\UPC\TP2\Deploy</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/03/2015 17:43:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>11/03/2015 17:43:42</publishTime>
+    </File>
+    <File Include="bin/GRP.Datos.dll">
+      <publishTime>04/22/2017 14:55:12</publishTime>
+    </File>
+    <File Include="bin/GRP.Entidades.dll">
+      <publishTime>04/22/2017 14:55:11</publishTime>
+    </File>
+    <File Include="bin/GRP.Negocio.dll">
+      <publishTime>04/22/2017 14:55:13</publishTime>
+    </File>
+    <File Include="bin/GRP.WebApi.dll">
+      <publishTime>04/22/2017 15:16:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/03/2014 20:33:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/28/2015 04:02:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/28/2015 04:02:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/28/2015 04:03:46</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/15/2017 21:44:52</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/22/2017 15:16:05</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/22/2017 15:16:52</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,162 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BD_CRPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="T_ArticuloProducto">
-    <Key>
-      <PropertyRef Name="codProducto" />
-      <PropertyRef Name="codArticulo" />
-    </Key>
-    <Property Name="cantidad" Type="Int32" Nullable="false" />
-    <Property Name="costo" Type="Int16" Nullable="false" />
-    <Property Name="codProducto" Type="Int32" Nullable="false" />
-    <Property Name="codArticulo" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="T_Producto" Relationship="Self.FK_T_ArticuloProducto0" FromRole="T_ArticuloProducto" ToRole="T_Producto" />
-    <NavigationProperty Name="T_Articulo" Relationship="BD_CRPModel.FK_T_ArticuloProducto1" FromRole="T_ArticuloProducto" ToRole="T_Articulo" />
-  </EntityType>
-  <EntityType Name="T_Carta">
-    <Key>
-      <PropertyRef Name="codCarta" />
-    </Key>
-    <Property Name="codCarta" Type="Int32" Nullable="false" />
-    <Property Name="estado" Type="Boolean" Nullable="false" />
-    <Property Name="fechaBaja" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="T_Combo" Relationship="Self.T_0" FromRole="T_Carta" ToRole="T_Combo" />
-  </EntityType>
-  <EntityType Name="T_Combo">
-    <Key>
-      <PropertyRef Name="codCombo" />
-    </Key>
-    <Property Name="codCombo" Type="Int32" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="precio" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="T_ComboVenta" Relationship="Self.FK_T_ComboVenta7" FromRole="T_Combo" ToRole="T_ComboVenta" />
-    <NavigationProperty Name="T_Carta" Relationship="Self.T_0" FromRole="T_Combo" ToRole="T_Carta" />
-    <NavigationProperty Name="T_Producto" Relationship="Self.T_1" FromRole="T_Combo" ToRole="T_Producto" />
-  </EntityType>
-  <EntityType Name="T_ComboVenta">
-    <Key>
-      <PropertyRef Name="codVenta" />
-      <PropertyRef Name="codCombo" />
-    </Key>
-    <Property Name="cantidad" Type="Int32" Nullable="false" />
-    <Property Name="monto" Type="Int16" Nullable="false" />
-    <Property Name="codVenta" Type="Int32" Nullable="false" />
-    <Property Name="codCombo" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="T_Combo" Relationship="Self.FK_T_ComboVenta7" FromRole="T_ComboVenta" ToRole="T_Combo" />
-    <NavigationProperty Name="T_Venta" Relationship="Self.FK_T_ComboVenta6" FromRole="T_ComboVenta" ToRole="T_Venta" />
-  </EntityType>
-  <EntityType Name="T_InformacionNutricional">
-    <Key>
-      <PropertyRef Name="codigoInfNut" />
-      <PropertyRef Name="codArticulo" />
-    </Key>
-    <Property Name="codigoInfNut" Type="Int32" Nullable="false" />
-    <Property Name="calorias" Type="Int16" Nullable="false" />
-    <Property Name="proteinas" Type="Int16" Nullable="false" />
-    <Property Name="carbohidratos" Type="Int16" Nullable="false" />
-    <Property Name="grasas" Type="Int16" Nullable="false" />
-    <Property Name="codArticulo" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="T_Articulo" Relationship="BD_CRPModel.FK_T_InformacionNutricional8" FromRole="T_InformacionNutricional" ToRole="T_Articulo" />
-  </EntityType>
-  <EntityType Name="T_Producto">
-    <Key>
-      <PropertyRef Name="codProducto" />
-    </Key>
-    <Property Name="codProducto" Type="Int32" Nullable="false" />
-    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="elaboracion" Type="Int16" Nullable="false" />
-    <Property Name="costo" Type="Int16" Nullable="false" />
-    <Property Name="umbralCosto" Type="Int16" Nullable="false" />
-    <Property Name="precio" Type="Int16" Nullable="false" />
-    <Property Name="estado" Type="Boolean" Nullable="false" />
-    <Property Name="calorias" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
-    <Property Name="proteinas" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
-    <Property Name="carbohidratos" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
-    <Property Name="grasas" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
-    <NavigationProperty Name="T_ArticuloProducto" Relationship="Self.FK_T_ArticuloProducto0" FromRole="T_Producto" ToRole="T_ArticuloProducto" />
-    <NavigationProperty Name="T_Combo" Relationship="Self.T_1" FromRole="T_Producto" ToRole="T_Combo" />
-  </EntityType>
-  <EntityType Name="T_Venta">
-    <Key>
-      <PropertyRef Name="codVenta" />
-    </Key>
-    <Property Name="codVenta" Type="Int32" Nullable="false" />
-    <Property Name="montoTotal" Type="Int16" Nullable="false" />
-    <Property Name="fecha" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="T_ComboVenta" Relationship="Self.FK_T_ComboVenta6" FromRole="T_Venta" ToRole="T_ComboVenta" />
-  </EntityType>
-  <Association Name="FK_T_ArticuloProducto0">
-    <End Role="T_Producto" Type="Self.T_Producto" Multiplicity="1" />
-    <End Role="T_ArticuloProducto" Type="Self.T_ArticuloProducto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="T_Producto">
-        <PropertyRef Name="codProducto" />
-      </Principal>
-      <Dependent Role="T_ArticuloProducto">
-        <PropertyRef Name="codProducto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_T_ComboVenta7">
-    <End Role="T_Combo" Type="Self.T_Combo" Multiplicity="1" />
-    <End Role="T_ComboVenta" Type="Self.T_ComboVenta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="T_Combo">
-        <PropertyRef Name="codCombo" />
-      </Principal>
-      <Dependent Role="T_ComboVenta">
-        <PropertyRef Name="codCombo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_T_ComboVenta6">
-    <End Role="T_Venta" Type="Self.T_Venta" Multiplicity="1" />
-    <End Role="T_ComboVenta" Type="Self.T_ComboVenta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="T_Venta">
-        <PropertyRef Name="codVenta" />
-      </Principal>
-      <Dependent Role="T_ComboVenta">
-        <PropertyRef Name="codVenta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="T_0">
-    <End Role="T_Carta" Type="Self.T_Carta" Multiplicity="*" />
-    <End Role="T_Combo" Type="Self.T_Combo" Multiplicity="*" />
-  </Association>
-  <Association Name="T_1">
-    <End Role="T_Combo" Type="Self.T_Combo" Multiplicity="*" />
-    <End Role="T_Producto" Type="Self.T_Producto" Multiplicity="*" />
-  </Association>
   <EntityContainer Name="BD_CRPEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="T_ArticuloProducto" EntityType="Self.T_ArticuloProducto" />
-    <EntitySet Name="T_Carta" EntityType="Self.T_Carta" />
-    <EntitySet Name="T_Combo" EntityType="Self.T_Combo" />
-    <EntitySet Name="T_ComboVenta" EntityType="Self.T_ComboVenta" />
-    <EntitySet Name="T_InformacionNutricional" EntityType="Self.T_InformacionNutricional" />
-    <EntitySet Name="T_Producto" EntityType="Self.T_Producto" />
-    <EntitySet Name="T_Venta" EntityType="Self.T_Venta" />
-    <AssociationSet Name="FK_T_ArticuloProducto0" Association="Self.FK_T_ArticuloProducto0">
-      <End Role="T_Producto" EntitySet="T_Producto" />
-      <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_T_ComboVenta7" Association="Self.FK_T_ComboVenta7">
-      <End Role="T_Combo" EntitySet="T_Combo" />
-      <End Role="T_ComboVenta" EntitySet="T_ComboVenta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_T_ComboVenta6" Association="Self.FK_T_ComboVenta6">
-      <End Role="T_Venta" EntitySet="T_Venta" />
-      <End Role="T_ComboVenta" EntitySet="T_ComboVenta" />
-    </AssociationSet>
-    <AssociationSet Name="T_0" Association="Self.T_0">
-      <End Role="T_Carta" EntitySet="T_Carta" />
-      <End Role="T_Combo" EntitySet="T_Combo" />
-    </AssociationSet>
-    <AssociationSet Name="T_1" Association="Self.T_1">
-      <End Role="T_Combo" EntitySet="T_Combo" />
-      <End Role="T_Producto" EntitySet="T_Producto" />
-    </AssociationSet>
     <EntitySet Name="T_Articulo" EntityType="BD_CRPModel.T_Articulo" />
+    <EntitySet Name="T_ArticuloProducto" EntityType="BD_CRPModel.T_ArticuloProducto" />
+    <EntitySet Name="T_Carta" EntityType="BD_CRPModel.T_Carta" />
+    <EntitySet Name="T_Combo" EntityType="BD_CRPModel.T_Combo" />
+    <EntitySet Name="T_ComboVenta" EntityType="BD_CRPModel.T_ComboVenta" />
+    <EntitySet Name="T_InformacionNutricional" EntityType="BD_CRPModel.T_InformacionNutricional" />
+    <EntitySet Name="T_Producto" EntityType="BD_CRPModel.T_Producto" />
+    <EntitySet Name="T_Venta" EntityType="BD_CRPModel.T_Venta" />
     <AssociationSet Name="FK_T_ArticuloProducto1" Association="BD_CRPModel.FK_T_ArticuloProducto1">
       <End Role="T_Articulo" EntitySet="T_Articulo" />
       <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
@@ -164,6 +16,26 @@
     <AssociationSet Name="FK_T_InformacionNutricional8" Association="BD_CRPModel.FK_T_InformacionNutricional8">
       <End Role="T_Articulo" EntitySet="T_Articulo" />
       <End Role="T_InformacionNutricional" EntitySet="T_InformacionNutricional" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ArticuloProducto0" Association="BD_CRPModel.FK_T_ArticuloProducto0">
+      <End Role="T_Producto" EntitySet="T_Producto" />
+      <End Role="T_ArticuloProducto" EntitySet="T_ArticuloProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ComboVenta7" Association="BD_CRPModel.FK_T_ComboVenta7">
+      <End Role="T_Combo" EntitySet="T_Combo" />
+      <End Role="T_ComboVenta" EntitySet="T_ComboVenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_ComboVenta6" Association="BD_CRPModel.FK_T_ComboVenta6">
+      <End Role="T_Venta" EntitySet="T_Venta" />
+      <End Role="T_ComboVenta" EntitySet="T_ComboVenta" />
+    </AssociationSet>
+    <AssociationSet Name="T_0" Association="BD_CRPModel.T_0">
+      <End Role="T_Carta" EntitySet="T_Carta" />
+      <End Role="T_Combo" EntitySet="T_Combo" />
+    </AssociationSet>
+    <AssociationSet Name="T_1" Association="BD_CRPModel.T_1">
+      <End Role="T_Combo" EntitySet="T_Combo" />
+      <End Role="T_Producto" EntitySet="T_Producto" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="T_Articulo">
@@ -178,6 +50,90 @@
     <Property Name="costoxUM" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
     <NavigationProperty Name="T_ArticuloProducto" Relationship="BD_CRPModel.FK_T_ArticuloProducto1" FromRole="T_Articulo" ToRole="T_ArticuloProducto" />
     <NavigationProperty Name="T_InformacionNutricional" Relationship="BD_CRPModel.FK_T_InformacionNutricional8" FromRole="T_Articulo" ToRole="T_InformacionNutricional" />
+  </EntityType>
+  <EntityType Name="T_ArticuloProducto">
+    <Key>
+      <PropertyRef Name="codProducto" />
+      <PropertyRef Name="codArticulo" />
+    </Key>
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="costo" Type="Int16" Nullable="false" />
+    <Property Name="codProducto" Type="Int32" Nullable="false" />
+    <Property Name="codArticulo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_Articulo" Relationship="BD_CRPModel.FK_T_ArticuloProducto1" FromRole="T_ArticuloProducto" ToRole="T_Articulo" />
+    <NavigationProperty Name="T_Producto" Relationship="BD_CRPModel.FK_T_ArticuloProducto0" FromRole="T_ArticuloProducto" ToRole="T_Producto" />
+  </EntityType>
+  <EntityType Name="T_Carta">
+    <Key>
+      <PropertyRef Name="codCarta" />
+    </Key>
+    <Property Name="codCarta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <Property Name="fechaBaja" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="T_Combo" Relationship="BD_CRPModel.T_0" FromRole="T_Carta" ToRole="T_Combo" />
+  </EntityType>
+  <EntityType Name="T_Combo">
+    <Key>
+      <PropertyRef Name="codCombo" />
+    </Key>
+    <Property Name="codCombo" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="T_ComboVenta" Relationship="BD_CRPModel.FK_T_ComboVenta7" FromRole="T_Combo" ToRole="T_ComboVenta" />
+    <NavigationProperty Name="T_Carta" Relationship="BD_CRPModel.T_0" FromRole="T_Combo" ToRole="T_Carta" />
+    <NavigationProperty Name="T_Producto" Relationship="BD_CRPModel.T_1" FromRole="T_Combo" ToRole="T_Producto" />
+  </EntityType>
+  <EntityType Name="T_ComboVenta">
+    <Key>
+      <PropertyRef Name="codVenta" />
+      <PropertyRef Name="codCombo" />
+    </Key>
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="monto" Type="Int16" Nullable="false" />
+    <Property Name="codVenta" Type="Int32" Nullable="false" />
+    <Property Name="codCombo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_Combo" Relationship="BD_CRPModel.FK_T_ComboVenta7" FromRole="T_ComboVenta" ToRole="T_Combo" />
+    <NavigationProperty Name="T_Venta" Relationship="BD_CRPModel.FK_T_ComboVenta6" FromRole="T_ComboVenta" ToRole="T_Venta" />
+  </EntityType>
+  <EntityType Name="T_InformacionNutricional">
+    <Key>
+      <PropertyRef Name="codigoInfNut" />
+      <PropertyRef Name="codArticulo" />
+    </Key>
+    <Property Name="codigoInfNut" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="calorias" Type="Int16" Nullable="false" />
+    <Property Name="proteinas" Type="Int16" Nullable="false" />
+    <Property Name="carbohidratos" Type="Int16" Nullable="false" />
+    <Property Name="grasas" Type="Int16" Nullable="false" />
+    <Property Name="codArticulo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_Articulo" Relationship="BD_CRPModel.FK_T_InformacionNutricional8" FromRole="T_InformacionNutricional" ToRole="T_Articulo" />
+  </EntityType>
+  <EntityType Name="T_Producto">
+    <Key>
+      <PropertyRef Name="codProducto" />
+    </Key>
+    <Property Name="codProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="elaboracion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="costo" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="umbralCosto" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <Property Name="calorias" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="proteinas" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="carbohidratos" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <Property Name="grasas" Type="Decimal" Nullable="false" Precision="13" Scale="2" />
+    <NavigationProperty Name="T_ArticuloProducto" Relationship="BD_CRPModel.FK_T_ArticuloProducto0" FromRole="T_Producto" ToRole="T_ArticuloProducto" />
+    <NavigationProperty Name="T_Combo" Relationship="BD_CRPModel.T_1" FromRole="T_Producto" ToRole="T_Combo" />
+  </EntityType>
+  <EntityType Name="T_Venta">
+    <Key>
+      <PropertyRef Name="codVenta" />
+    </Key>
+    <Property Name="codVenta" Type="Int32" Nullable="false" />
+    <Property Name="montoTotal" Type="Int16" Nullable="false" />
+    <Property Name="fecha" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="T_ComboVenta" Relationship="BD_CRPModel.FK_T_ComboVenta6" FromRole="T_Venta" ToRole="T_ComboVenta" />
   </EntityType>
   <Association Name="FK_T_ArticuloProducto1">
     <End Type="BD_CRPModel.T_Articulo" Role="T_Articulo" Multiplicity="1" />
@@ -202,5 +158,49 @@
         <PropertyRef Name="codArticulo" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ArticuloProducto0">
+    <End Type="BD_CRPModel.T_Producto" Role="T_Producto" Multiplicity="1" />
+    <End Type="BD_CRPModel.T_ArticuloProducto" Role="T_ArticuloProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Producto">
+        <PropertyRef Name="codProducto" />
+      </Principal>
+      <Dependent Role="T_ArticuloProducto">
+        <PropertyRef Name="codProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ComboVenta7">
+    <End Type="BD_CRPModel.T_Combo" Role="T_Combo" Multiplicity="1" />
+    <End Type="BD_CRPModel.T_ComboVenta" Role="T_ComboVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Combo">
+        <PropertyRef Name="codCombo" />
+      </Principal>
+      <Dependent Role="T_ComboVenta">
+        <PropertyRef Name="codCombo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_ComboVenta6">
+    <End Type="BD_CRPModel.T_Venta" Role="T_Venta" Multiplicity="1" />
+    <End Type="BD_CRPModel.T_ComboVenta" Role="T_ComboVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Venta">
+        <PropertyRef Name="codVenta" />
+      </Principal>
+      <Dependent Role="T_ComboVenta">
+        <PropertyRef Name="codVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="T_0">
+    <End Type="BD_CRPModel.T_Carta" Role="T_Carta" Multiplicity="*" />
+    <End Type="BD_CRPModel.T_Combo" Role="T_Combo" Multiplicity="*" />
+  </Association>
+  <Association Name="T_1">
+    <End Type="BD_CRPModel.T_Combo" Role="T_Combo" Multiplicity="*" />
+    <End Type="BD_CRPModel.T_Producto" Role="T_Producto" Multiplicity="*" />
   </Association>
 </Schema>

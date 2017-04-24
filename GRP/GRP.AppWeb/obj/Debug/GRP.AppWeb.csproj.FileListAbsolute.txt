@@ -31,5 +31,7 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\bin\System.Web.Mvc.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\obj\Debug\GRP.AppWeb.csprojResolveAssemblyReference.cache
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\obj\Debug\GRP.AppWeb.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\obj\Debug\GRP.AppWeb.pdb
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\bin\GRP.Entidades.dll
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\bin\GRP.Entidades.pdb
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\bin\Newtonsoft.Json.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\bin\System.Net.Http.Formatting.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\bin\Newtonsoft.Json.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.AppWeb\bin\System.Net.Http.Formatting.xml

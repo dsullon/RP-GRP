@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6042a90b658c4fc79a5830e244032343" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="BD_CRPModel.T_ArticuloProducto" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_CRPModel.T_Carta" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_CRPModel.T_Combo" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_CRPModel.T_ComboVenta" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_CRPModel.T_InformacionNutricional" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_CRPModel.T_Producto" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_CRPModel.T_Venta" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="BD_CRPModel.FK_T_ArticuloProducto0" ManuallyRouted="false" />
-        <AssociationConnector Association="BD_CRPModel.FK_T_ComboVenta7" ManuallyRouted="false" />
-        <AssociationConnector Association="BD_CRPModel.FK_T_ComboVenta6" ManuallyRouted="false" />
-        <AssociationConnector Association="BD_CRPModel.T_0" ManuallyRouted="false" />
-        <AssociationConnector Association="BD_CRPModel.T_1" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="BD_CRPModel.T_Articulo" Width="1.5" PointX="5.25" PointY="10.375" />
+      <Diagram DiagramId="6042a90b658c4fc79a5830e244032343" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="BD_CRPModel.T_Articulo" Width="1.5" PointX="5.875" PointY="11" />
+        <EntityTypeShape EntityType="BD_CRPModel.T_ArticuloProducto" Width="1.5" PointX="7.5" PointY="6.5" />
+        <EntityTypeShape EntityType="BD_CRPModel.T_Carta" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="BD_CRPModel.T_Combo" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="BD_CRPModel.T_ComboVenta" Width="1.5" PointX="5.25" PointY="2.5" />
+        <EntityTypeShape EntityType="BD_CRPModel.T_InformacionNutricional" Width="1.5" PointX="8.375" PointY="10.625" />
+        <EntityTypeShape EntityType="BD_CRPModel.T_Venta" Width="1.5" PointX="3" PointY="0.75" />
         <AssociationConnector Association="BD_CRPModel.FK_T_ArticuloProducto1" />
         <AssociationConnector Association="BD_CRPModel.FK_T_InformacionNutricional8" />
+        <AssociationConnector Association="BD_CRPModel.FK_T_ComboVenta7" />
+        <AssociationConnector Association="BD_CRPModel.FK_T_ComboVenta6" />
+        <AssociationConnector Association="BD_CRPModel.T_0" />
+        <EntityTypeShape EntityType="BD_CRPModel.T_Producto" Width="1.5" PointX="4.75" PointY="6.25" />
+        <AssociationConnector Association="BD_CRPModel.FK_T_ArticuloProducto0" />
+        <AssociationConnector Association="BD_CRPModel.T_1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

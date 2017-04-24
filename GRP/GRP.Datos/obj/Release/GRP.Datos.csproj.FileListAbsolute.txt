@@ -1,0 +1,9 @@
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\GRP.Datos.dll.config
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\GRP.Datos.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.SqlServer.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\GRP.Entidades.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.SqlServer.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\obj\Release\GRP.Datos.csprojResolveAssemblyReference.cache
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\obj\Release\GRP.Datos.dll

@@ -13,6 +13,8 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\roslyn\VBCSCompiler.exe.config
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.WebApi.dll.config
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.WebApi.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.WebApi.pdb
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\EntityFramework.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\EntityFramework.SqlServer.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.Entidades.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.Negocio.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -21,16 +23,16 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\System.Net.Http.Formatting.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\System.Web.Http.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\System.Web.Http.WebHost.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.Datos.dll
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\EntityFramework.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.Entidades.pdb
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.Negocio.pdb
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\EntityFramework.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\EntityFramework.SqlServer.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\Newtonsoft.Json.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\System.Net.Http.Formatting.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\System.Web.Http.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\System.Web.Http.WebHost.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\GRP.Datos.pdb
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\bin\EntityFramework.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\obj\Debug\GRP.WebApi.csprojResolveAssemblyReference.cache
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\obj\Debug\GRP.WebApi.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.WebApi\obj\Debug\GRP.WebApi.pdb

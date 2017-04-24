@@ -2,32 +2,57 @@
 using GRP.WebApi.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace GRP.WebApi.Controllers
 {
+    [RoutePrefix("api/items")]
     public class ItemsController : ApiController
     {
+        [Route("")]
         public List<ItemDTO> GetAll()
         {
-            var items = from b in LNArticulo.ListarTodos()
-                        select new ItemDTO()
-                        {
-                            Id = b.codArticulo,
-                            Name = b.nombre,
-                            Description = b.descripcion,
-                            UnitOfMeasurement = b.unidadMedida,
-                            Type = b.tipoArticulo,
-                            Price = b.costoxUM
-                        };
-            return items.ToList();
+            try
+            {
+                var items = from b in LNArticulo.ListarTodos()
+                            select new ItemDTO()
+                            {
+                                Id = b.codArticulo,
+                                Name = b.nombre,
+                                Description = b.descripcion,
+                                UnitOfMeasurement = b.unidadMedida,
+                                Type = b.tipoArticulo,
+                                Price = b.costoxUM
+                            };
+                return items.ToList();
+            }
+            catch (System.Exception ex)
+            {
+                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent(ex.Message),
+                    ReasonPhrase = "There was an error processing the request"
+                };
+                throw new HttpResponseException(resp);
+            }
+
         }
 
+        [Route("{id}")]
         public IHttpActionResult GetItem(int id)
         {
             var item = LNArticulo.Obtener(id);
             if (item == null)
-                return NotFound();
+            {
+                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent(string.Format("No item with ID = {0}", id)),
+                    ReasonPhrase = "Items ID Not Found"
+                };
+                throw new HttpResponseException(resp);
+            }
             else
             {
                 var newItem = new ItemDTO()

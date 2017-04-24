@@ -19,7 +19,7 @@ namespace GRP.Entidades
         public int codProducto { get; set; }
         public int codArticulo { get; set; }
     
-        public virtual T_Producto T_Producto { get; set; }
         public virtual T_Articulo T_Articulo { get; set; }
+        public virtual T_Producto T_Producto { get; set; }
     }
 }

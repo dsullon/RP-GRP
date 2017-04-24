@@ -81,10 +81,10 @@
     </Key>
     <Property Name="codProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="elaboracion" Type="smallint" Nullable="false" />
-    <Property Name="costo" Type="smallint" Nullable="false" />
-    <Property Name="umbralCosto" Type="smallint" Nullable="false" />
-    <Property Name="precio" Type="smallint" Nullable="false" />
+    <Property Name="elaboracion" Type="text" Nullable="false" />
+    <Property Name="costo" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="umbralCosto" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="precio" Type="numeric" Precision="13" Scale="2" Nullable="false" />
     <Property Name="estado" Type="bit" Nullable="false" />
     <Property Name="calorias" Type="numeric" Precision="13" Scale="2" Nullable="false" />
     <Property Name="proteinas" Type="numeric" Precision="13" Scale="2" Nullable="false" />

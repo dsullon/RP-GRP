@@ -5,5 +5,6 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.SqlServer.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.SqlServer.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.csprojResolveAssemblyReference.cache
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.pdb

@@ -23,15 +23,18 @@ namespace GRP.Entidades
     
         public int codProducto { get; set; }
         public string nombre { get; set; }
-        public short elaboracion { get; set; }
-        public short costo { get; set; }
-        public short umbralCosto { get; set; }
-        public short precio { get; set; }
+        public string elaboracion { get; set; }
+        public decimal costo { get; set; }
+        public decimal umbralCosto { get; set; }
+        public decimal precio { get; set; }
         public bool estado { get; set; }
         public decimal calorias { get; set; }
         public decimal proteinas { get; set; }
         public decimal carbohidratos { get; set; }
         public decimal grasas { get; set; }
+        public string tipo { get; set; }
+        public int porciones { get; set; }
+        public decimal rendimiento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_ArticuloProducto> T_ArticuloProducto { get; set; }

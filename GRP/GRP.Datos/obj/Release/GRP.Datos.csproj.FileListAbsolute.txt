@@ -7,3 +7,12 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.SqlServer.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\obj\Release\GRP.Datos.csprojResolveAssemblyReference.cache
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\obj\Release\GRP.Datos.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Release\GRP.Datos.dll.config
+C:\RP-GRP\GRP\GRP.Datos\bin\Release\GRP.Datos.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.SqlServer.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Release\GRP.Entidades.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.xml
+C:\RP-GRP\GRP\GRP.Datos\bin\Release\EntityFramework.SqlServer.xml
+C:\RP-GRP\GRP\GRP.Datos\obj\Release\GRP.Datos.csprojResolveAssemblyReference.cache
+C:\RP-GRP\GRP\GRP.Datos\obj\Release\GRP.Datos.dll

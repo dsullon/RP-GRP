@@ -6,3 +6,11 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Release\EntityFramework.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Release\EntityFramework.SqlServer.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Release\GRP.Entidades.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Release\GRP.Entidades.csprojResolveAssemblyReference.cache
+C:\RP-GRP\GRP\GRP.Entidades\bin\Release\GRP.Entidades.dll.config
+C:\RP-GRP\GRP\GRP.Entidades\bin\Release\GRP.Entidades.dll
+C:\RP-GRP\GRP\GRP.Entidades\bin\Release\EntityFramework.dll
+C:\RP-GRP\GRP\GRP.Entidades\bin\Release\EntityFramework.SqlServer.dll
+C:\RP-GRP\GRP\GRP.Entidades\bin\Release\EntityFramework.xml
+C:\RP-GRP\GRP\GRP.Entidades\bin\Release\EntityFramework.SqlServer.xml
+C:\RP-GRP\GRP\GRP.Entidades\obj\Release\GRP.Entidades.csprojResolveAssemblyReference.cache
+C:\RP-GRP\GRP\GRP.Entidades\obj\Release\GRP.Entidades.dll

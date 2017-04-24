@@ -100,33 +100,41 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
                         <div class="panel panel-default">
                             <div class="panel-heading">Informaci&oacute;n nutricional</div>
                             <div class="panel-body">
-                                <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
-                                    @Html.LabelFor(model => model.Calorias)
-                                    @Html.EditorFor(model => model.Calorias, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Calorias, "", new { @class = "text-danger" })
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="Precio" class="col-sm-4 control-label">Calorias:</label>
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.Calorias, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Calorias, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Precio" class="col-sm-4 control-label">Proteinas:</label>
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.Proteinas, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Proteinas, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
-                                    @Html.LabelFor(model => model.Calorias)
-                                    @Html.EditorFor(model => model.Calorias, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Calorias, "", new { @class = "text-danger" })
-                                </div>
-
-
-                                <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
-                                    @Html.LabelFor(model => model.Proteinas)
-                                    @Html.EditorFor(model => model.Proteinas, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Proteinas, "", new { @class = "text-danger" })
-                                </div>
-
-                                <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
-                                    @Html.LabelFor(model => model.Carbohidratos)
-                                    @Html.EditorFor(model => model.Carbohidratos, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Carbohidratos, "", new { @class = "text-danger" })
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="Precio" class="col-sm-4 control-label">Grasas:</label>
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.Grasas, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Grasas, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Precio" class="col-sm-4 control-label">Carboh.:</label>
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.Carbohidratos, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Carbohidratos, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

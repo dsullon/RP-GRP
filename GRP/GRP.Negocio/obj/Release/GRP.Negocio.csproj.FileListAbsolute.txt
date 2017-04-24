@@ -8,3 +8,13 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.SqlServer.xml
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\obj\Release\GRP.Negocio.csprojResolveAssemblyReference.cache
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Negocio\obj\Release\GRP.Negocio.dll
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Negocio.dll.config
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Negocio.dll
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.dll
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.SqlServer.dll
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Datos.dll
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\GRP.Entidades.dll
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.xml
+C:\RP-GRP\GRP\GRP.Negocio\bin\Release\EntityFramework.SqlServer.xml
+C:\RP-GRP\GRP\GRP.Negocio\obj\Release\GRP.Negocio.csprojResolveAssemblyReference.cache
+C:\RP-GRP\GRP\GRP.Negocio\obj\Release\GRP.Negocio.dll

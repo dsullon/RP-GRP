@@ -90,6 +90,9 @@
     <Property Name="proteinas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
     <Property Name="carbohidratos" Type="numeric" Precision="13" Scale="2" Nullable="false" />
     <Property Name="grasas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="porciones" Type="int" Nullable="false" />
+    <Property Name="rendimiento" Type="numeric" Precision="13" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="T_Venta">
     <Key>

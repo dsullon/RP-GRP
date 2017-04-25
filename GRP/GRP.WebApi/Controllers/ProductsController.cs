@@ -50,7 +50,7 @@ namespace GRP.WebApi.Controllers
 
         [Route("{id}")]
         [HttpGet]
-        public ProductDTO GetItem(int id)
+        public ProductDTO GetProduct(int id)
         {
             var product = LNProducto.Obtener(id);
             if (product == null)
@@ -82,6 +82,37 @@ namespace GRP.WebApi.Controllers
                     RecipeYield = product.rendimiento
                 };
                 return newProduct;
+            }
+        }
+
+        [Route("items/{id}")]
+        [HttpGet]
+        public List<ProductItemDTO> GetItems(int id)
+        {
+            try
+            {
+                var products = from b in LNProducto.ListarArticulos(id)
+                               select new ProductItemDTO()
+                               {
+                                   Qty = b.cantidad,
+                                   Cost = b.costo,
+                                   ProductId = b.codProducto,
+                                   ItemId = b.codArticulo,
+                                   Description = b.T_Articulo.descripcion,
+                                   UnitOfMeasurement = b.T_Articulo.unidadMedida,
+                                   Price = b.T_Articulo.costoxUM,
+
+                               };
+                return products.ToList();
+            }
+            catch (System.Exception ex)
+            {
+                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent(ex.Message),
+                    ReasonPhrase = "There was an error processing the request"
+                };
+                throw new HttpResponseException(resp);
             }
         }
     }

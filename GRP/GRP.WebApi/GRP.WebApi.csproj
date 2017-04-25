@@ -103,12 +103,13 @@
     </Compile>
     <Compile Include="Models\ItemDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
+    <Compile Include="Models\ProductItemDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\GRPWebApi - FileSystem.pubxml" />
-    <None Include="Properties\PublishProfiles\GRPWebApi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\WebApiDeploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

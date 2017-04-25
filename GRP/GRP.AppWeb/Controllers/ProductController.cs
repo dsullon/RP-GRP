@@ -53,7 +53,14 @@ namespace GRP.AppWeb.Controllers
             listaClasificacion.Add(new SelectListItem { Text = "Postres", Value = "Postres" });
 
             ViewBag.Clasificacion = listaClasificacion;
-            return View();
+            var p = new Producto();
+            Session["Ingredientes"] = p.ProductoArticulo;
+            return View(p);
+        }
+
+        public ViewResult BlankEditorRow()
+        {
+            return View("ProductEditRow", new ProductoArticulo());
         }
     }
 }

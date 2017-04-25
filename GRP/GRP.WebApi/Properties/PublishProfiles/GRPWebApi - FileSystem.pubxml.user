@@ -16,16 +16,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/03/2015 17:43:42</publishTime>
     </File>
     <File Include="bin/GRP.Datos.dll">
-      <publishTime>04/23/2017 13:49:52</publishTime>
+      <publishTime>04/24/2017 23:48:37</publishTime>
     </File>
     <File Include="bin/GRP.Entidades.dll">
-      <publishTime>04/23/2017 13:49:49</publishTime>
+      <publishTime>04/24/2017 22:13:46</publishTime>
     </File>
     <File Include="bin/GRP.Negocio.dll">
-      <publishTime>04/23/2017 13:49:53</publishTime>
+      <publishTime>04/25/2017 11:12:09</publishTime>
     </File>
     <File Include="bin/GRP.WebApi.dll">
-      <publishTime>04/23/2017 14:17:23</publishTime>
+      <publishTime>04/25/2017 11:15:32</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>
@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/22/2017 15:16:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/22/2017 19:37:48</publishTime>
+      <publishTime>04/25/2017 11:12:19</publishTime>
     </File>
   </ItemGroup>
 </Project>

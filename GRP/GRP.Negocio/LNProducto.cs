@@ -18,5 +18,11 @@ namespace GRP.Negocio
             BD_CRPEntities db = new BD_CRPEntities();
             return db.T_Producto.FirstOrDefault(x => x.codProducto == id);
         }
+
+        public static List<T_ArticuloProducto> ListarArticulos(int idProducto)
+        {
+            BD_CRPEntities db = new BD_CRPEntities();
+            return db.T_ArticuloProducto.Where(x=> x.codProducto == idProducto).ToList();
+        }
     }
 }

@@ -63,23 +63,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="T_Producto">
-      <EntityTypeMapping TypeName="BD_CRPModel.T_Producto">
-        <MappingFragment StoreEntitySet="T_Producto">
-          <ScalarProperty Name="grasas" ColumnName="grasas" />
-          <ScalarProperty Name="carbohidratos" ColumnName="carbohidratos" />
-          <ScalarProperty Name="proteinas" ColumnName="proteinas" />
-          <ScalarProperty Name="calorias" ColumnName="calorias" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
-          <ScalarProperty Name="umbralCosto" ColumnName="umbralCosto" />
-          <ScalarProperty Name="costo" ColumnName="costo" />
-          <ScalarProperty Name="elaboracion" ColumnName="elaboracion" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="codProducto" ColumnName="codProducto" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="T_Venta">
       <EntityTypeMapping TypeName="BD_CRPModel.T_Venta">
         <MappingFragment StoreEntitySet="T_Venta">
@@ -97,6 +80,26 @@
         <ScalarProperty Name="codCarta" ColumnName="codCarta" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="T_Producto">
+      <EntityTypeMapping TypeName="BD_CRPModel.T_Producto">
+        <MappingFragment StoreEntitySet="T_Producto">
+          <ScalarProperty Name="rendimiento" ColumnName="rendimiento" />
+          <ScalarProperty Name="porciones" ColumnName="porciones" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="grasas" ColumnName="grasas" />
+          <ScalarProperty Name="carbohidratos" ColumnName="carbohidratos" />
+          <ScalarProperty Name="proteinas" ColumnName="proteinas" />
+          <ScalarProperty Name="calorias" ColumnName="calorias" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="umbralCosto" ColumnName="umbralCosto" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="elaboracion" ColumnName="elaboracion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="codProducto" ColumnName="codProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="T_1" TypeName="BD_CRPModel.T_1" StoreEntitySet="T_1">
       <EndProperty Name="T_Producto">
         <ScalarProperty Name="codProducto" ColumnName="codProducto" />

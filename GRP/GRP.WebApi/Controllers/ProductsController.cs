@@ -85,7 +85,7 @@ namespace GRP.WebApi.Controllers
             }
         }
 
-        [Route("items/{id}")]
+        [Route("{id}/items")]
         [HttpGet]
         public List<ProductItemDTO> GetItems(int id)
         {

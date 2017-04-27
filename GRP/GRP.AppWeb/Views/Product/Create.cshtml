@@ -2,8 +2,32 @@
 
 @{
     ViewBag.Title = "Create";
+    ViewBag.Items = ViewContext.ViewBag.Items;
 }
+
+<script>
+    function calcular() {
+        var sumaCosto = 0;
+        var porciones = $('#txtPorciones').val();
+        if (isNaN(porciones) || porciones == 0) {
+            porciones = 1;
+        }
+
+        $('#tblIngredientes').each(function () {
+            $('tr').each(function () {
+                $(this).find('#tdCosto').each(function () {
+                    var costo = $(this).text();
+                    sumaCosto += parseFloat(costo);
+                });
+            });
+        });
+        $('#txtCosto').val(sumaCosto);
+        console.log(porciones);
+        $('#txtCostoUni').val(sumaCosto / porciones);
+    }
+</script>
 <h2>Nuevo Producto</h2>
+<button onclick="calcular();">Click me</button>
 
 @using (Html.BeginForm())
 {
@@ -46,7 +70,7 @@
                             <div class="form-group">
                                 <label for="Porciones" class="col-sm-3 control-label">Porciones:</label>
                                 <div class="col-sm-3">
-                                    @Html.EditorFor(model => model.Porciones, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.Porciones, new { htmlAttributes = new { @class = "form-control", @id = "txtPorciones" } })
                                     @Html.ValidationMessageFor(model => model.Porciones, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -54,7 +78,7 @@
                             <div class="form-group">
                                 <label for="Redimiento" class="col-sm-3 control-label">Rendimiento:</label>
                                 <div class="col-sm-3">
-                                    @Html.EditorFor(model => model.Rendimiento, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.Rendimiento, new { htmlAttributes = new { @class = "form-control", @id = "txtRendimiento", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.Rendimiento, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -67,7 +91,7 @@
                             <div class="form-group">
                                 <label for="Costo" class="col-sm-3 control-label">Costo:</label>
                                 <div class="col-md-3">
-                                    @Html.EditorFor(model => model.Costo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.Costo, new { htmlAttributes = new { @class = "form-control", @id = "txtCosto", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.Costo, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -75,7 +99,7 @@
                             <div class="form-group">
                                 <label for="Redimiento" class="col-sm-3 control-label">Costo Unit.:</label>
                                 <div class="col-md-3">
-                                    @Html.EditorFor(model => model.Costo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.Costo, new { htmlAttributes = new { @class = "form-control", @id = "txtCostoUni", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.Costo, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -83,7 +107,7 @@
                             <div class="form-group">
                                 <label for="UmbralCosto" class="col-sm-3 control-label">Umbral:</label>
                                 <div class="col-md-3">
-                                    @Html.EditorFor(model => model.UmbralCosto, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.UmbralCosto, new { htmlAttributes = new { @class = "form-control", @id = "txtUmbral", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.UmbralCosto, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -91,7 +115,7 @@
                             <div class="form-group">
                                 <label for="Precio" class="col-sm-3 control-label">Precio Vta.:</label>
                                 <div class="col-md-3">
-                                    @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control", @id = "txtPrecio", @readonly = "readonly" } })
                                     @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -107,14 +131,14 @@
                                     <div class="form-group">
                                         <label for="Precio" class="col-sm-4 control-label">Calorias:</label>
                                         <div class="col-md-8">
-                                            @Html.EditorFor(model => model.Calorias, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.Calorias, new { htmlAttributes = new { @class = "form-control", @id = "txtCalorias", @readonly = "readonly" } })
                                             @Html.ValidationMessageFor(model => model.Calorias, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="Precio" class="col-sm-4 control-label">Proteinas:</label>
                                         <div class="col-md-8">
-                                            @Html.EditorFor(model => model.Proteinas, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.Proteinas, new { htmlAttributes = new { @class = "form-control", @id = "txtProteinas" } })
                                             @Html.ValidationMessageFor(model => model.Proteinas, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
@@ -123,14 +147,14 @@
                                     <div class="form-group">
                                         <label for="Precio" class="col-sm-4 control-label">Grasas:</label>
                                         <div class="col-md-8">
-                                            @Html.EditorFor(model => model.Grasas, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.Grasas, new { htmlAttributes = new { @class = "form-control", @id = "txtGrasas", @readonly = "readonly" } })
                                             @Html.ValidationMessageFor(model => model.Grasas, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="Precio" class="col-sm-4 control-label">Carboh.:</label>
                                         <div class="col-md-8">
-                                            @Html.EditorFor(model => model.Carbohidratos, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.EditorFor(model => model.Carbohidratos, new { htmlAttributes = new { @class = "form-control", @id = "txtCarboh", @readonly = "readonly" } })
                                             @Html.ValidationMessageFor(model => model.Carbohidratos, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
@@ -164,8 +188,7 @@
             </div>
         </div>
     </div>
-}
-
+                                }
 <!-- modal placeholder-->
 <div id='myModal' class='modal fade in'>
     <div class="modal-dialog">

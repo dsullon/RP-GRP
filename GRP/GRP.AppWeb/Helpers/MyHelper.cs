@@ -19,5 +19,17 @@ namespace GRP.AppWeb
 
             return MvcHtmlString.Create(builder.ToString());
         }
+
+        public static dynamic GetPageViewBag(this HtmlHelper html)
+        {
+            if (html == null || html.ViewContext == null) //this means that the page is root or parial view
+                return html.ViewBag;
+
+            ControllerBase controller = html.ViewContext.Controller;
+            while (controller.ControllerContext.IsChildAction)  //traverse hierachy to get root controller
+                controller = controller.ControllerContext.ParentActionViewContext.Controller;
+
+            return controller.ViewBag;
+        }
     }
 }

@@ -5,13 +5,13 @@
         <strong>Ingredientes</strong>
     </div>
 
-    <table class="table table-hover">
+    <table class="table table-hover" id="tblIngredientes">
         <tr>
             <th>Ingrediente</th>
             <th>U.M.</th>
             <th>Costo</th>
             <th>Cant.</th>
-            <th>Precio</th>
+            <th>Importe</th>
             <th>
                 @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-plus'></span>", "Add", "Create", "ProductItem", routeValues: new { ProductoID = ViewBag.ProductoID }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary pull-right" })
             </th>
@@ -20,35 +20,17 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descripcion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnidadMedida)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cantidad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Costo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Precio)
-                </td>
-                <td>
-                    
-                </td>
+                <td>@item.Descripcion</td>
+                <td>@item.UnidadMedida</td>
+                <td>@item.Costo</td>
+                <td>@item.Cantidad</td>
+                <td id="tdCosto">@item.Precio</td>
+                <td></td>
             </tr>
         }
     </table>
 
 </div>
-
-@* ! @Script.Render is not supported in partials - for extensions see: http://stackoverflow.com/a/13765578/209259
-
-    @Scripts.Render("~/bundles/modalform")
-
-*@
 
 <script type="text/javascript">
     $(function () {
@@ -57,6 +39,11 @@
         $("a[data-modal]").on("click", function (e) {
             // hide dropdown if any (this is used wehen invoking modal from link in bootstrap dropdown )
             //$(e.target).closest('.btn-group').children('.dropdown-toggle').dropdown('toggle');
+            
+            var porciones = $('#txtPorciones').val();
+            if (isNaN(porciones) || porciones <= 0) {
+                return false;
+            }
 
             $('#myModalContent').load(this.href, function () {
                 $('#myModal').modal({
@@ -67,6 +54,7 @@
             });
             return false;
         });
+        calcular();
     });
 
     function bindForm(dialog) {
@@ -83,7 +71,6 @@
                     } else {
                         $('#myModalContent').html(result);
                         bindForm(dialog);
-                        console.log(result);
                     }
                 }
             });

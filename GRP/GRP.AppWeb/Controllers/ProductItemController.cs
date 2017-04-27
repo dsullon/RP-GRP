@@ -66,7 +66,7 @@ namespace GRP.AppWeb.Controllers
         {
             ProductoArticulo articulo = new ProductoArticulo();
             //articulo.IdProducto = ProductoID;
-
+            ModelState.Clear();
             return PartialView("_Create", articulo);
         }
 
@@ -79,8 +79,6 @@ namespace GRP.AppWeb.Controllers
                 List<ProductoArticulo> listado = Session["Ingredientes"] as List<ProductoArticulo>;
                 listado.Add(articulo);
                 Session["Ingredientes"] = listado;
-                //db.Addresses.Add(articulo);
-                //db.SaveChanges();
                 string url = Url.Action("Index", "ProductItem");
                 return Json(new { success = true, url = url });
             }

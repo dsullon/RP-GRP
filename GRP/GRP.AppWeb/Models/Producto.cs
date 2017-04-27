@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using Newtonsoft.Json;
-using System.Web;
 
 namespace GRP.AppWeb.Models
 {
@@ -12,6 +9,7 @@ namespace GRP.AppWeb.Models
         {
             ProductoArticulo = new List<ProductoArticulo>();
         }
+
         public int Id { get; set; }
 
         [JsonProperty("name")]

@@ -67,5 +67,33 @@ namespace GRP.WebApi.Controllers
                 return Ok(newItem);
             }
         }
+
+        [Route("{id}/info")]
+        public IHttpActionResult GetInformation(int id)
+        {
+            var info = LNArticulo.ObtenerInformacionNutricional(id);
+            if (info == null)
+            {
+                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent(string.Format("No info with ID = {0}", id)),
+                    ReasonPhrase = "Info ID Not Found"
+                };
+                throw new HttpResponseException(resp);
+            }
+            else
+            {
+                var newItem = new NutritionalFactsDTO()
+                {
+                    Id = info.codigoInfNut,
+                    ItemID = info.codArticulo,
+                    Calories = info.calorias,
+                    Proteins = info.proteinas,
+                    Carbohydrates = info.carbohidratos,
+                    Fats = info.grasas
+                };
+                return Ok(newItem);
+            }
+        }
     }
 }

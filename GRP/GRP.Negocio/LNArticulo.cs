@@ -18,5 +18,11 @@ namespace GRP.Negocio
             BD_CRPEntities db = new BD_CRPEntities();
             return db.T_Articulo.FirstOrDefault(x => x.codArticulo == id);
         }
+
+        public static T_InformacionNutricional ObtenerInformacionNutricional(int idArticulo)
+        {
+            BD_CRPEntities db = new BD_CRPEntities();
+            return db.T_InformacionNutricional.FirstOrDefault(x => x.codArticulo == idArticulo);
+        }
     }
 }

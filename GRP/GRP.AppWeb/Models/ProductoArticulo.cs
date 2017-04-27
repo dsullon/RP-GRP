@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Newtonsoft.Json;
-using System.Web;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace GRP.AppWeb.Models
 {
@@ -12,7 +10,8 @@ namespace GRP.AppWeb.Models
         public int Cantidad { get; set; }
 
         [JsonProperty("cost")]
-        public short Costo { get; set; }
+        [Required]
+        public decimal Costo { get; set; }
 
         [JsonProperty("productId")]
         public int IdProducto { get; set; }
@@ -26,7 +25,9 @@ namespace GRP.AppWeb.Models
         [JsonProperty("unitOfMeasurement")]
         public string UnidadMedida { get; set; }
 
-        [JsonProperty("price")]
-        public decimal Precio { get; set; }        
+        public decimal Precio
+        {
+            get { return Cantidad * Costo; }
+        }
     }
 }

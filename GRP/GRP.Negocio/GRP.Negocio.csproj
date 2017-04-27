@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LNArticulo.cs" />
+    <Compile Include="LNInformacionNutricional.cs" />
     <Compile Include="LNProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

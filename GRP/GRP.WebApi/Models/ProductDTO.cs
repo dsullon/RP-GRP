@@ -1,4 +1,5 @@
-﻿namespace GRP.WebApi.Models
+﻿using System.Collections.Generic;
+namespace GRP.WebApi.Models
 {
     public class ProductDTO
     {
@@ -16,5 +17,6 @@
         public string Type { get; set; }
         public int Servings { get; set; }
         public decimal RecipeYield { get; set; }
+        public IEnumerable<ProductItemDTO> Items { get; set; }
     }
 }

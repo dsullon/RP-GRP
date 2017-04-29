@@ -7,7 +7,7 @@ namespace GRP.AppWeb.Models
     {
         public Producto()
         {
-            ProductoArticulo = new List<ProductoArticulo>();
+            Ingredientes = new List<ProductoArticulo>();
         }
 
         public int Id { get; set; }
@@ -51,7 +51,10 @@ namespace GRP.AppWeb.Models
         [JsonProperty("recipeYield")]
         public decimal Rendimiento { get; set; }
 
-        public List<ProductoArticulo> ProductoArticulo { get; set; }
+        public decimal Utilidad { get { return 20; } }
+
+        [JsonProperty("items")]
+        public IEnumerable<ProductoArticulo> Ingredientes { get; set; }
 
         //public virtual ICollection<T_Combo> T_Combo { get; set; }
     }

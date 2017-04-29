@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Text;
 
 namespace GRP.AppWeb.Controllers
 {
@@ -54,8 +55,37 @@ namespace GRP.AppWeb.Controllers
 
             ViewBag.Clasificacion = listaClasificacion;
             var p = new Producto();
-            Session["Ingredientes"] = p.ProductoArticulo;
+            p.UmbralCosto = 10;
+            Session["Ingredientes"] = p.Ingredientes;
             return View(p);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create(Producto producto)
+        {
+            List<ProductoArticulo> listado = Session["Ingredientes"] as List<ProductoArticulo>;
+            if (ModelState.IsValid && listado.Count > 0)
+            {
+                producto.Ingredientes = listado;
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(ConfigurationManager.AppSettings["UrlApi"]);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(producto), Encoding.UTF8, "application/json");
+                    // HTTP POST
+
+                    HttpResponseMessage response = await client.PostAsync("products", content);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string data = await response.Content.ReadAsStringAsync();
+                        producto = JsonConvert.DeserializeObject<Producto>(data);
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            return View(producto);
         }
 
         public ViewResult BlankEditorRow()

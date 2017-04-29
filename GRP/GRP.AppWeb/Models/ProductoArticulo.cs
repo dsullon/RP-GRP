@@ -7,7 +7,7 @@ namespace GRP.AppWeb.Models
     public class ProductoArticulo
     {
         [JsonProperty("qty")]
-        public int Cantidad { get; set; }
+        public decimal Cantidad { get; set; }
 
         [JsonProperty("cost")]
         [Required]
@@ -25,9 +25,24 @@ namespace GRP.AppWeb.Models
         [JsonProperty("unitOfMeasurement")]
         public string UnidadMedida { get; set; }
 
+        [JsonProperty("calories")]
+        public decimal Calorias { get; set; }
+
+        [JsonProperty("proteins")]
+        public decimal Proteinas { get; set; }
+
+        [JsonProperty("carbohydrates")]
+        public decimal Carbohidratos { get; set; }
+
+        [JsonProperty("fats")]
+        public decimal Grasas { get; set; }
+
+        [JsonProperty("recipeYield")]
+        public decimal Rendimiento { get; set; }
+
         public decimal Precio
         {
-            get { return Cantidad * Costo; }
+            get { return decimal.Round(Cantidad * Costo, 2); }
         }
     }
 }

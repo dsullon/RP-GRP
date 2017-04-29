@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -17,25 +18,6 @@ namespace GRP.AppWeb.Controllers
         {
             List<ProductoArticulo> listado = Session["Ingredientes"] as List<ProductoArticulo>;
             return PartialView("_Index", listado);
-            //ViewBag.ProductoID = id;
-            //List<ProductoArticulo> listado = new List<ProductoArticulo>();
-            //using (var client = new HttpClient())
-            //{
-            //    client.BaseAddress = new Uri(ConfigurationManager.AppSettings["UrlApi"]);
-            //    client.DefaultRequestHeaders.Clear();
-            //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            //    HttpResponseMessage Res = null;
-            //    Task.Factory.StartNew(async () =>
-            //    {
-            //        Res = await client.GetAsync(string.Format("products/items/{0}", id)).ConfigureAwait(false);
-            //    });
-            //    if (Res != null && Res.IsSuccessStatusCode)
-            //    {
-            //        var responseData = Res.Content.ReadAsStringAsync().Result;
-            //        listado = JsonConvert.DeserializeObject<List<ProductoArticulo>>(responseData);
-            //    }
-            //    return PartialView("_Index", listado);
-            //}
         }
 
         [ChildActionOnly]
@@ -72,11 +54,15 @@ namespace GRP.AppWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Cantidad,Costo,UnidadMedida,Descripcion")] ProductoArticulo articulo)
+        public ActionResult Create([Bind(Include = "Cantidad,Costo,UnidadMedida,Descripcion,Calorias,Proteinas,Grasa,Carbohidratos,Rendimiento")] ProductoArticulo articulo)
         {
             if (ModelState.IsValid)
             {
                 List<ProductoArticulo> listado = Session["Ingredientes"] as List<ProductoArticulo>;
+                articulo.Calorias = articulo.Calorias * articulo.Cantidad;
+                articulo.Carbohidratos = articulo.Carbohidratos * articulo.Cantidad;
+                articulo.Grasas = articulo.Grasas * articulo.Cantidad;
+                articulo.Proteinas = articulo.Proteinas * articulo.Cantidad;
                 listado.Add(articulo);
                 Session["Ingredientes"] = listado;
                 string url = Url.Action("Index", "ProductItem");

@@ -10,3 +10,15 @@ D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\bin\Debug\EntityFramework.SqlServer.
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\obj\Debug\GRP.Datos.csprojResolveAssemblyReference.cache
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\obj\Debug\GRP.Datos.dll
 D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Datos\obj\Debug\GRP.Datos.pdb
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\GRP.Datos.dll.config
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\GRP.Datos.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\GRP.Datos.pdb
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\EntityFramework.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\GRP.Entidades.dll
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\GRP.Entidades.pdb
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\EntityFramework.xml
+C:\RP-GRP\GRP\GRP.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\RP-GRP\GRP\GRP.Datos\obj\Debug\GRP.Datos.csprojResolveAssemblyReference.cache
+C:\RP-GRP\GRP\GRP.Datos\obj\Debug\GRP.Datos.dll
+C:\RP-GRP\GRP\GRP.Datos\obj\Debug\GRP.Datos.pdb

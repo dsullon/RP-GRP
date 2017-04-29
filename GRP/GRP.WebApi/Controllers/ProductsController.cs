@@ -1,4 +1,5 @@
-﻿using GRP.Negocio;
+﻿using GRP.Entidades;
+using GRP.Negocio;
 using GRP.WebApi.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,23 +18,23 @@ namespace GRP.WebApi.Controllers
             try
             {
                 var products = from b in LNProducto.ListarTodos()
-                            select new ProductDTO()
-                            {
-                                Id = b.codProducto,
-                                Name = b.nombre,
-                                Directions = b.elaboracion,
-                                Cost = b.costo,
-                                CostThreshold = b.umbralCosto,
-                                Price = b.precio,
-                                Status = b.estado,
-                                Calories = b.calorias,
-                                Proteins = b.proteinas,
-                                Carbohydrates = b.carbohidratos,
-                                Fats = b.grasas,
-                                Type = b.tipo,
-                                Servings = b.porciones,
-                                RecipeYield = b.rendimiento
-                            };
+                               select new ProductDTO()
+                               {
+                                   Id = b.codProducto,
+                                   Name = b.nombre,
+                                   Directions = b.elaboracion,
+                                   Cost = b.costo,
+                                   CostThreshold = b.umbralCosto,
+                                   Price = b.precio,
+                                   Status = b.estado,
+                                   Calories = b.calorias,
+                                   Proteins = b.proteinas,
+                                   Carbohydrates = b.carbohidratos,
+                                   Fats = b.grasas,
+                                   Type = b.tipo,
+                                   Servings = b.porciones,
+                                   RecipeYield = b.rendimiento
+                               };
                 return products.ToList();
             }
             catch (System.Exception ex)
@@ -114,6 +115,34 @@ namespace GRP.WebApi.Controllers
                 };
                 throw new HttpResponseException(resp);
             }
+        }
+
+        [Route("")]
+        [HttpPost]
+        public HttpResponseMessage Create([FromBody]ProductDTO product)
+        {
+            var nuevoProducto = new T_Producto();
+            nuevoProducto.nombre = product.Name;
+            nuevoProducto.elaboracion = product.Directions;
+            nuevoProducto.costo = product.Cost;
+            nuevoProducto.umbralCosto = product.CostThreshold;
+            nuevoProducto.precio = product.Price;
+            nuevoProducto.estado = true;
+            nuevoProducto.calorias = product.Calories;
+            nuevoProducto.proteinas = product.Proteins;
+            nuevoProducto.carbohidratos = product.Carbohydrates;
+            nuevoProducto.grasas = product.Fats;
+            nuevoProducto.tipo = product.Type;
+            nuevoProducto.porciones = product.Servings;
+            nuevoProducto.rendimiento = product.RecipeYield;
+            T_ArticuloProducto nuevoIngrediente = null;
+            foreach (var item in product.Items)
+            {
+                nuevoIngrediente = new T_ArticuloProducto();
+                nuevoIngrediente.
+            }
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

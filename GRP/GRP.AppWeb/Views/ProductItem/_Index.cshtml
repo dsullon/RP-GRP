@@ -2,18 +2,22 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <strong>Ingredientes</strong>
-    </div>
-
+        <strong>.</strong>
+        @Html.NoEncodeActionLink("Agregar insumos", "Add", "Create", "ProductItem", routeValues: new { ProductoID = ViewBag.ProductoID }, htmlAttributes: new { data_modal = "", @class = "pull-left" })
+    </div>    
     <table class="table table-hover" id="tblIngredientes">
         <tr>
-            <th>Ingrediente</th>
-            <th>U.M.</th>
-            <th>Costo</th>
-            <th>Cant.</th>
-            <th>Importe</th>
-            <th>
-                @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-plus'></span>", "Add", "Create", "ProductItem", routeValues: new { ProductoID = ViewBag.ProductoID }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary pull-right" })
+            <th class="col-sm-4">Ingrediente</th>
+            <th class="col-sm-1">U.M.</th>
+            <th class="col-sm-1">Costo</th>
+            <th class="col-sm-1">Cant.</th>
+            <th class="col-sm-1">Importe</th>
+            <th class="col-sm-1">Gra.</th>
+            <th class="col-sm-1">Cal.</th>
+            <th class="col-sm-1">Pro.</th>
+            <th class="col-sm-1">Carb.</th>
+            <th>Rend.</th>
+            <th>                
             </th>
         </tr>
 
@@ -24,7 +28,12 @@
                 <td>@item.UnidadMedida</td>
                 <td>@item.Costo</td>
                 <td>@item.Cantidad</td>
-                <td id="tdCosto">@item.Precio</td>
+                <td id="tdImporte">@item.Precio</td>
+                <td id="tdGrasa">@item.Grasas</td>
+                <td id="tdCaloria">@item.Calorias</td>
+                <td id="tdProteina">@item.Proteinas</td>
+                <td id="tdCarbohidrato">@item.Carbohidratos</td>
+                <td id="tdRendimiento">@item.Rendimiento</td>
                 <td></td>
             </tr>
         }
@@ -36,10 +45,7 @@
     $(function () {
         $.ajaxSetup({ cache: false });
 
-        $("a[data-modal]").on("click", function (e) {
-            // hide dropdown if any (this is used wehen invoking modal from link in bootstrap dropdown )
-            //$(e.target).closest('.btn-group').children('.dropdown-toggle').dropdown('toggle');
-            
+        $("a[data-modal]").on("click", function (e) {            
             var porciones = $('#txtPorciones').val();
             if (isNaN(porciones) || porciones <= 0) {
                 return false;
@@ -47,7 +53,6 @@
 
             $('#myModalContent').load(this.href, function () {
                 $('#myModal').modal({
-                    /*backdrop: 'static',*/
                     keyboard: true
                 }, 'show');
                 bindForm(this);

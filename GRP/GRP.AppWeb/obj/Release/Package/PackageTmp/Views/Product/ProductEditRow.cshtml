@@ -1,0 +1,18 @@
+﻿@using HtmlHelpers.BeginCollectionItem
+
+@{
+    Layout = "";
+}
+
+@model GRP.AppWeb.Models.ProductoArticulo
+<div class="editorRow">
+    @using (Html.BeginCollectionItem("mylist"))
+    {
+        <td>@Html.TextBoxFor(m => m.Cantidad)</td>
+        <td>@Html.TextBoxFor(m => m.Costo)</td>
+        <td>
+            <span class="dltBtn"><a href="#" class="deleteRow">Delete</a></span>
+        </td>
+    }
+</div>
+

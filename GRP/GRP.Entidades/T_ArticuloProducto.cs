@@ -14,10 +14,16 @@ namespace GRP.Entidades
     
     public partial class T_ArticuloProducto
     {
-        public int cantidad { get; set; }
-        public short costo { get; set; }
+        public decimal cantidad { get; set; }
+        public decimal costo { get; set; }
         public int codProducto { get; set; }
         public int codArticulo { get; set; }
+        public decimal calorias { get; set; }
+        public decimal proteinas { get; set; }
+        public decimal carbohidratos { get; set; }
+        public decimal grasas { get; set; }
+        public decimal rendimiento { get; set; }
+        public string unidadMedida { get; set; }
     
         public virtual T_Articulo T_Articulo { get; set; }
         public virtual T_Producto T_Producto { get; set; }

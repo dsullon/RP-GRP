@@ -1,16 +1,17 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
 
 namespace GRP.AppWeb.Models
 {
     public class ProductoArticulo
     {
         [JsonProperty("qty")]
+        [Required(ErrorMessage = "La cantidad es un dato obligatorio")]
+        [Range(0.01, 100.00,
+            ErrorMessage = "La cantidad debe estar entre 0.01 y 100.00")]
         public decimal Cantidad { get; set; }
 
         [JsonProperty("cost")]
-        [Required]
         public decimal Costo { get; set; }
 
         [JsonProperty("productId")]
@@ -38,11 +39,14 @@ namespace GRP.AppWeb.Models
         public decimal Grasas { get; set; }
 
         [JsonProperty("recipeYield")]
+        [Required(ErrorMessage = "El rendimiento es un dato obligatorio")]
+        [Range(0.01, 1.00,
+            ErrorMessage = "El rendimiento debe estar entre 0.01 y 1.00")]
         public decimal Rendimiento { get; set; }
 
         public decimal Precio
         {
-            get { return decimal.Round(Cantidad * Costo, 2); }
+            get { return decimal.Round((Cantidad / Rendimiento) * Costo, 2); }
         }
     }
 }

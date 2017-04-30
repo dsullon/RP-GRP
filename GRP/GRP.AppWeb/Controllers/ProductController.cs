@@ -81,9 +81,9 @@ namespace GRP.AppWeb.Controllers
                     {
                         string data = await response.Content.ReadAsStringAsync();
                         producto = JsonConvert.DeserializeObject<Producto>(data);
+                        return RedirectToAction("Index");
                     }
                 }
-                return RedirectToAction("Index");
             }
             return View(producto);
         }

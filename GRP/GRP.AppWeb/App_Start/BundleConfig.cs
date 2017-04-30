@@ -20,7 +20,8 @@ namespace GRP.AppWeb
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootstrap-table/bootstrap-table.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/modalform").Include(
                         "~/Scripts/modalform.js"));
@@ -28,7 +29,8 @@ namespace GRP.AppWeb
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/sidebar.css"));
+                      "~/Content/sidebar.css",
+                      "~/Content/bootstrap-table.min.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

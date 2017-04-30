@@ -1,20 +1,83 @@
 ﻿@model IEnumerable<GRP.AppWeb.Models.Articulo>
 
-<table class="table" id="tblArticulo">
-    <tr>
-        <th></th>
-        <th>Ingrediente</th>
-        <th>U.M</th>
-        <th>Costo</th>
-    </tr>
+<script>
+    var data = @Html.Raw(Json.Encode(@Model));
+    $(function () {
+        $('#table').bootstrapTable({
+            data: data
+        });
+    });
+</script>
 
-@foreach (var item in Model) {
-    <tr>
-        <td><input type="radio" name="rbArticulo" value="@item.Id" onchange="obtenerDatos()"></td>
-        <td>@item.Descripcion</td>
-        <td>@item.UnidadMedida</td>
-        <td>@item.CostoxUM</td>
-    </tr>
-}
 
+<table id="table"
+       data-page-size="5" 
+       data-pagination="true" 
+       data-search="true" 
+       data-show-refresh="true" 
+       data-side-pagination="server" 
+       data-sort-name="Nombre" 
+       data-sort-order="desc" 
+       data-toggle="table" 
+       data-url="/ProductItem/listadobusqueda">
+    <thead>
+        <tr>
+            <th data-radio="true"></th>
+            <th data-field="Id">Id</th>
+            <th data-field="Nombre" data-sortable="true">Nombre</th>
+            <th data-field="Descripcion">Descripcion</th>
+            <th data-field="UnidadMedida">Unidad Medida</th>
+            <th data-field="CostoxUM">Costox UM</th>
+        </tr>
+    </thead>
 </table>
+
+<script type="text/javascript">
+    $(function () {
+
+        $('#table').on('check.bs.table', function (e, row) {
+            console.log(row);
+            $('#IdArticulo').val(row.Id);
+            $('#nombre').val(row.Nombre);
+            $('#UnidadMedida').val(row.UnidadMedida);
+            $('#costo').val(row.CostoxUM);
+            var url = '@(ConfigurationManager.AppSettings["UrlApi"])';
+            $.ajax({
+                type: 'GET',
+                url: url + 'items/' + row.Id + '/info',
+                dataType: 'json',
+                success: function (data) {
+                    var json = JSON.parse(JSON.stringify(data));
+                    $("#Calorias").val(json["Calories"]);
+                    $("#Proteinas").val(json["Proteins"]);
+                    $("#Carbohidratos").val(json["Carbohydrates"]);
+                    $("#Grasas").val(json["Fats"]);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+    });
+
+</script>
+
+
+@*<table class="table" id="tblArticulo">
+        <tr>
+            <th></th>
+            <th>Ingrediente</th>
+            <th>U.M</th>
+            <th>Costo</th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td><input type="radio" name="rbArticulo" value="@item.Id" onchange="obtenerDatos()"></td>
+            <td>@item.Descripcion</td>
+            <td>@item.UnidadMedida</td>
+            <td>@item.CostoxUM</td>
+        </tr>
+    }
+
+    </table>*@

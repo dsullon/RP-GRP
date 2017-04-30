@@ -1,13 +1,3 @@
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.dll.config
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.dll
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.pdb
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.dll
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.SqlServer.dll
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.xml
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.SqlServer.xml
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.csprojResolveAssemblyReference.cache
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.dll
-D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.pdb
 C:\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.dll.config
 C:\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.dll
 C:\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.pdb
@@ -18,3 +8,13 @@ C:\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.SqlServer.xml
 C:\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.csprojResolveAssemblyReference.cache
 C:\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.dll
 C:\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.pdb
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.dll.config
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\GRP.Entidades.pdb
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.SqlServer.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\bin\Debug\EntityFramework.SqlServer.xml
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.csprojResolveAssemblyReference.cache
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.dll
+D:\ALEX\CURSOS\UPC\TP2\RP-GRP\GRP\GRP.Entidades\obj\Debug\GRP.Entidades.pdb

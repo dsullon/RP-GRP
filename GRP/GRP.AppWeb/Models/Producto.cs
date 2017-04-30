@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GRP.AppWeb.Models
 {
@@ -16,6 +17,7 @@ namespace GRP.AppWeb.Models
         public string Nombre { get; set; }
 
         [JsonProperty("directions")]
+        [Required(ErrorMessage ="El dato de elaboración es obligatorio")]
         public string Elaboracion { get; set; }
 
         [JsonProperty("cost")]
@@ -43,9 +45,12 @@ namespace GRP.AppWeb.Models
         public decimal Grasas { get; set; }
 
         [JsonProperty("type")]
+        [Required(ErrorMessage ="La clasificación es una dato obligatorio")]
         public string Tipo { get; set; }
 
         [JsonProperty("servings")]
+        [Required(ErrorMessage = "El n° de porciones es obligatorio")]
+        [Range(1.00,20.00,ErrorMessage = "La cantidad debe estar entre 1 y 20")]
         public int Porciones { get; set; }
 
         [JsonProperty("recipeYield")]

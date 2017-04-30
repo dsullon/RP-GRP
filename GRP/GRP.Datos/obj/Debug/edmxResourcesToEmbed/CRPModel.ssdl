@@ -32,10 +32,16 @@
       <PropertyRef Name="codProducto" />
       <PropertyRef Name="codArticulo" />
     </Key>
-    <Property Name="cantidad" Type="int" Nullable="false" />
-    <Property Name="costo" Type="smallint" Nullable="false" />
+    <Property Name="cantidad" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="costo" Type="numeric" Precision="13" Scale="2" Nullable="false" />
     <Property Name="codProducto" Type="int" Nullable="false" />
     <Property Name="codArticulo" Type="int" Nullable="false" />
+    <Property Name="calorias" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="proteinas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="carbohidratos" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="grasas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="rendimiento" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="unidadMedida" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="T_Carta">
     <Key>
@@ -49,9 +55,10 @@
     <Key>
       <PropertyRef Name="codCombo" />
     </Key>
-    <Property Name="codCombo" Type="int" Nullable="false" />
+    <Property Name="codCombo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="precio" Type="smallint" Nullable="false" />
+    <Property Name="precio" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="T_ComboVenta">
     <Key>
@@ -98,7 +105,7 @@
     <Key>
       <PropertyRef Name="codVenta" />
     </Key>
-    <Property Name="codVenta" Type="int" Nullable="false" />
+    <Property Name="codVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="montoTotal" Type="smallint" Nullable="false" />
     <Property Name="fecha" Type="smallint" Nullable="false" />
   </EntityType>

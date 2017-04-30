@@ -32,10 +32,16 @@
       <PropertyRef Name="codProducto" />
       <PropertyRef Name="codArticulo" />
     </Key>
-    <Property Name="cantidad" Type="int" Nullable="false" />
-    <Property Name="costo" Type="smallint" Nullable="false" />
+    <Property Name="cantidad" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="costo" Type="numeric" Precision="13" Scale="2" Nullable="false" />
     <Property Name="codProducto" Type="int" Nullable="false" />
     <Property Name="codArticulo" Type="int" Nullable="false" />
+    <Property Name="calorias" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="proteinas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="carbohidratos" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="grasas" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="rendimiento" Type="numeric" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="unidadMedida" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="T_Carta">
     <Key>

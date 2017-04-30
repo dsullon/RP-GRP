@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Combos</h2>
+<h3>Mantenimiento de combos</h3>
+<p>
+    @Html.ActionLink("Nuevo combo", "Create") | @Html.ActionLink("Ver sugeridos", "Sugeridos")
+</p>
+<table id="table"
+       data-page-size="5"
+       data-pagination="true"
+       data-search="true"
+       data-show-refresh="true"
+       data-side-pagination="server"
+       data-sort-name="Nombre"
+       data-sort-order="desc"
+       data-toggle="table"
+       data-url="/Pack/ListadoBusqueda">
+    <thead>
+        <tr>
+            <th data-field="Id">Id</th>
+            <th data-field="Nombre" data-sortable="true">Nombre</th>
+            <th data-field="Descripcion">Descripcion</th>
+            <th data-field="Precio">Precio</th>
+        </tr>
+    </thead>
+</table>
+

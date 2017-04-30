@@ -105,12 +105,14 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\PacksController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ItemDTO.cs" />
     <Compile Include="Models\NutritionalFactsDTO.cs" />
+    <Compile Include="Models\PackDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\ProductItemDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -139,10 +139,22 @@ namespace GRP.WebApi.Controllers
             foreach (var item in product.Items)
             {
                 nuevoIngrediente = new T_ArticuloProducto();
-                nuevoIngrediente.
+                nuevoIngrediente.cantidad = item.Qty;
+                nuevoIngrediente.costo = item.Cost;
+                nuevoIngrediente.codArticulo = item.ItemId;
+                nuevoIngrediente.calorias = item.Calories;
+                nuevoIngrediente.proteinas = item.Proteins;
+                nuevoIngrediente.carbohidratos = item.Carbohydrates;
+                nuevoIngrediente.grasas = item.Fats;
+                nuevoIngrediente.rendimiento = item.RecipeYield;
+                nuevoIngrediente.unidadMedida = item.UnitOfMeasurement;
+                nuevoProducto.T_ArticuloProducto.Add(nuevoIngrediente);
             }
-
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            var status = LNProducto.Grabar(nuevoProducto);
+            if (status)
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            else
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError);
         }
     }
 }
